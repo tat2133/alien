@@ -11,7 +11,7 @@ alien_storage_info(){
 }
 
 alien_date_time_info(){
-  echo -n "`date +%r`";
+  echo -n "`date +%T`";
 }
 
 alien_ssh_client(){
@@ -39,9 +39,9 @@ alien_battery_stat(){
   if [[ $__os = "Darwin" ]]; then
     __bat_power=`pmset -g batt | tail -1 | awk '{print $4}' | tr -d "%;"`;
     __bat_power_ind="";
-    if [[ $__bat_power = "charging" ]]; then __bat_power_ind="+";
-    elif [[ $__bat_power = "discharging" ]]; then __bat_power_ind="-";
-    elif [[ $__bat_power = "finishing" ]]; then __bat_power_ind="+";
+    if [[ $__bat_power = "charging" ]]; then __bat_power_ind="\u26a1";
+    elif [[ $__bat_power = "discharging" ]]; then __bat_power_ind="";
+    elif [[ $__bat_power = "finishing" ]]; then __bat_power_ind="\u26a1";
     elif [[ $__bat_power = "charged" ]]; then __bat_power_ind="•";
     fi
        __bat_per=`pmset -g batt | tail -1 | awk '{print $3}' | tr -d "%;"`
