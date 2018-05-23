@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
 
 alien_theme(){
-  [[ -z $white ]]       && white=252
+  [[ -z $white ]]       && white=231
   [[ -z $black ]]       && black=234
   [[ -z $lightblack ]]  && lightblack=235
   [[ -z $lightblack2 ]] && lightblack2=236
   [[ -z $darkblack ]]   && darkblack=233
   [[ -z $grey ]]        && grey=239
   [[ -z $lightgrey ]]   && lightgrey=245
+  [[ -z $whitegrey ]]   && whitegrey=252
   [[ -z $darkgrey ]]    && darkgrey=237
   [[ -z $warmgrey ]]    && warmgrey=59
 
@@ -35,10 +36,10 @@ alien_theme(){
   [[ -z $color9 ]]  && color9=${lightaqua}    # vcs fg
   [[ -z $color10 ]] && color10=${lightgrey}         # lr bg
   [[ -z $color11 ]] && color11=${white}         # lr fg
-  [[ -z $color12 ]] && color12=${white}         # dirty copy bg
+  [[ -z $color12 ]] && color12=${whitegrey}         # dirty copy bg
   [[ -z $color13 ]] && color13=${darkblack}         # dirty copy fg
-  [[ -z $color14 ]] && color14=${lightgrey}         # venv color
+  [[ -z $color14 ]] && color14=${whitegrey}         # venv color
 
-  [[ -z "${PLIB_GIT_TRACKED_COLOR}" ]]   && PLIB_GIT_TRACKED_COLOR=${green} # 27
-  [[ -z "${PLIB_GIT_UNTRACKED_COLOR}" ]] && PLIB_GIT_UNTRACKED_COLOR=${pink} # 236
+  [[ -z "${PLIB_GIT_TRACKED_COLOR}" ]]   && PLIB_GIT_TRACKED_COLOR=${lightaqua} # 27
+  [[ -z "${PLIB_GIT_UNTRACKED_COLOR}" ]] && PLIB_GIT_UNTRACKED_COLOR=${grey} # 236
 }
